@@ -1,24 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'; // Assuming you have some CSS file for styling
+
+import WineStats from './winestats'; // Assuming WineStats component is in WineStats.js
+import data from './wineData.json'; // Assuming wineData.json is in the project directory
+import { WineDataItem } from './types'; // Import WineDataItem type
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <WineStats data={data as WineDataItem[]} />
     </div>
   );
 }
